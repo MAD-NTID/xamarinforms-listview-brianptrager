@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewApp.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="facultyListView" ItemsSource="{Binding .}" IsPullToRefreshEnabled="True" Refreshing="facultyListView_Refreshing" ItemSelected="facultyListView_ItemSelected" ItemTapped="facultyListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Name}" ImageSource="{Binding ImageUri}" Detail="{Binding Specialty, StringFormat='Specialty: {0}'}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
